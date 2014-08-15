@@ -18,7 +18,7 @@ $json = file_get_contents($fetchThis);
 // get data from JSON feed
 $data = json_decode($json, true);
 // parse results
-foreach ($data['17'] as $line) { 
+foreach ($data[''.$routeNo.''] as $line) { 
     $name = $line['StopName']; // get name of the stop
     $route =  $line['Route']; // get route number
     $when = $line['DateCalender']; // get when it will arrive
