@@ -13,6 +13,5 @@ Future Plans
 =====================
 Automatically fetch routes associated with a stop in a dropdown.
 Allow fetching the next arrivials for all routes at a stop instead of one at a time.
-Figure out why requesting three results doesn't always fetch three results
+Figure out why requesting three results doesn't always fetch three results. (Seems to be on SEPTA's end.)
 [Nice-to-have] responsive layout.
-[Nice-to-have] fetch any associated route disruptions.
