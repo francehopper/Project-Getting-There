@@ -35,7 +35,7 @@ $alertsData = json_decode($alertsJSON, true);
 // check if there is an alert
 $alertCheck = $alertsData['0']['advisory_message'];
 if ($alertCheck !== '') {
-	echo '<p>Heads up! There are disruptions on this route:</p>';
+	echo '<h1><p>Heads up! There are disruptions on this route:</p></h1>';
 	// parse alerts
 	foreach ($alertsData as $line) {
 		$disruptedRoute = $line['route_name']; // get disrupted route number
@@ -45,18 +45,21 @@ if ($alertCheck !== '') {
 		$detourStartsOn = $line['detour_start_date_time']; // get start 
 		$detourEndsOn = $line['detour_end_date_time']; // get end
 		$reason = $line['detour_reason']; // get why
-		$lastUpdate = $line['last_update']; // get as of
-		// check if message is advisory or detour
-		// if detour_message is NULL
-			// advisory code
-			$advisory = '<p>As of '.$lastUpdate.', the following advisory is in effect for route '.$disruptedRoute.': '.$advisoryMsg.'</p>';
+		$lastUpdate = $line['last_updated']; // get as of
+		// build messages for advisories and detours
+		// advisory present
+		if ($advisoryMsg !== '') {
+			$advisory = '<p>As of '.$lastUpdate.', the following advisory is in effect for route '.$disruptedRoute.': '.$advisoryMsg.'</p><br />';
+			echo $advisory;
 			// as WHEN, the following advisory is in effect for route ROUTE: ADVISORY
-		// else
-			// detour code
-
-		// build message for detour
-		$detour = '<p>As of '.$lastUpdate.', from '.$detourStartsOn.' until '.$detourEndsOn.', route '.$disruptedRoute.' will be detoured starting at '.$detourLocStart.' due to '.$reason.'.</p><p> The detour will be: '.$detourMsg.'.</p><p>'.$advisoryMsg.'</p>';
-// as of WHEN, from START until END, route ROUTE will be detoured starting at LOCATION due to REASON. The detour will be MESSAGE. ADVISORY
+		}
+		// detour present
+		if ($detourMsg !== '') {
+			// build message for detour
+			$detour = '<p>As of '.$lastUpdate.', from '.$detourStartsOn.' until '.$detourEndsOn.', route '.$disruptedRoute.' will be detoured starting at '.$detourLocStart.' due to '.$reason.'.</p><p> The detour will be: '.$detourMsg.'.</p><p>'.$advisoryMsg.'</p><br />';
+			echo $detour;
+			// as of WHEN, from START until END, route ROUTE will be detoured starting at LOCATION due to REASON. The detour will be MESSAGE. ADVISORY
+		}
 	}
 }
 
