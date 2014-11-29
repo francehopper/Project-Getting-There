@@ -1,6 +1,6 @@
 Project-Getting-There
 =====================
-A project to build a web interface for fetching SEPTA sechedules using the Stop ID.
+A project to build a web interface for fetching SEPTA schedules using the Stop ID.
 
 About the Project
 =====================
@@ -11,7 +11,6 @@ The inspiration for this project was the SMS schedule system.
 
 Future Plans
 =====================
-Automatically fetch routes associated with a stop in a dropdown.
-Allow fetching the next arrivials for all routes at a stop instead of one at a time.
-Figure out why requesting three results doesn't always fetch three results. (Seems to be on SEPTA's end.)
-[Nice-to-have] responsive layout.
+> Automatically fetch routes associated with a stop in a dropdown.
+> Allow fetching the next arrivials for all routes at a stop instead of one at a time.
+> Better display/more reliable display of route alerts.
