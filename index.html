@@ -63,15 +63,21 @@
 						<section>
 							<form action="results.php" name="input">
 							<p>
-								Enter your Stop ID: <a href="http://www3.septa.org/stops/" target="_blank">(Need help finding it?)</a><br />
-								<input type="text" name="stopID" class="input"><br />
+								<strong>Enter your Stop ID:</strong><br />
+								<a href="http://www3.septa.org/stops/" target="_blank">Need help finding it?</a><br />
+								<input type="text" name="stopID" class="input">
 							</p>
 							<p>
-								Enter your route number (Use LUCYGR for LUCY Green and LUCYGO for LUCY Gold):<br />
-								<input type="text" name="routeNo" class="input"><br />
+								<strong>Enter your route number:</strong><br/ >
+								Use LUCYGR for LUCY Green and LUCYGO for LUCY Gold.<br />
+								<!-- Coming soon -->
+								<!-- Leave blank if you don't want to fliter by route<br /> -->
+								<input type="text" name="routeNo" class="input">
 							</p>
-								<p>How many results would you like? (Note: There is a known issue where only two results are displayed when requesting three.)<br />
-								<input type="text" name="arrivalsLimit" class="input"><br />
+							<p>
+								<strong>How many results would you like?</strong><br />
+								Note: There is a known issue where only two results are displayed when requesting three.<br />
+								<input type="text" name="arrivalsLimit" class="input">
 							</p>
 							<p><input type="submit" value="Search" method="GET" formaction="results.php" /></p>
 							</form>
